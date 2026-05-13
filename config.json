@@ -1,0 +1,44 @@
+{
+  "random_seed": 42,
+  "n_attack": 200,
+  "n_benign": 200,
+  "n_folds": 5,
+  "threshold": 0.70,
+  "weights": {
+    "T": 0.35,
+    "C": 0.20,
+    "B": 0.25,
+    "N": 0.20
+  },
+  "model_name": "sentence-transformers/all-mpnet-base-v2",
+  "attack_priors": {
+    "BEC": 0.40,
+    "spear_phishing": 0.30,
+    "pretexting": 0.20,
+    "authority_impersonation": 0.10
+  },
+  "synthetic_generation": {
+    "attack_actor_min": 2,
+    "attack_actor_max": 4,
+    "attack_channel_min": 2,
+    "attack_channel_max": 3,
+    "attack_step_min": 4,
+    "attack_step_max": 8,
+    "benign_channel_min": 1,
+    "benign_channel_max": 2,
+    "benign_step_min": 3,
+    "benign_step_max": 8,
+    "attack_target_overlap_min": 0.40,
+    "attack_target_overlap_max": 0.80,
+    "benign_target_overlap_min": 0.00,
+    "benign_target_overlap_max": 0.25
+  },
+  "role_templates": [
+    ["IC", "TB", "AC", "UI", "AR"],
+    ["IC", "TB", "UI", "AR"],
+    ["IC", "TB", "TB", "AC", "UI", "AR"],
+    ["IC", "AC", "UI", "AR"],
+    ["IC", "TB", "AR"],
+    ["IC", "UI", "AR"]
+  ]
+}
